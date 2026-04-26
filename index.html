@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Viral</title>
+
+<style>
+body {
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Arial;
+    text-align:center;
+}
+
+.container {
+    max-width:800px;
+    margin:auto;
+    padding:20px;
+}
+
+/* VIDEO AREA */
+.video-box {
+    position:relative;
+    cursor:pointer;
+}
+
+video {
+    width:100%;
+    border-radius:12px;
+}
+
+/* tombol play besar */
+.play-btn {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size:60px;
+    background:rgba(0,0,0,0.6);
+    border-radius:50%;
+    padding:20px 30px;
+}
+
+/* progress bar */
+.progress {
+    width:100%;
+    height:6px;
+    background:#333;
+    margin-top:10px;
+}
+
+.progress-bar {
+    height:6px;
+    width:0%;
+    background:red;
+}
+
+/* tombol lanjut */
+.btn {
+    display:none;
+    margin-top:20px;
+    padding:15px 25px;
+    background:red;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🔥 Jangan Lewatkan Video Ini 🔥</h2>
+
+<div class="video-box" onclick="startVideo()">
+    <video id="myVideo">
+        <source src="vdeyss.mp4" type="video/mp4">
+    </video>
+    <div class="play-btn" id="playBtn">▶</div>
+</div>
+
+<div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<!-- Banner -->
+<div style="margin-top:20px;">
+<script>
+atOptions = {
+    key: '26802505',
+    format: 'iframe',
+    height: 250,
+    width: 300,
+    params: {}
+};
+</script>
+<script src="//www.topcreativeformat.com/YOUR_ADSTERRA_KEY/invoke.js"></script>
+</div>
+
+<!-- tombol lanjut -->
+<a href="#" class="btn" id="btnNext" onclick="nextAd()">LANJUT NONTON</a>
+
+</div>
+
+<script>
+let firstClick = false;
+
+function startVideo() {
+    let video = document.getElementById("myVideo");
+    let playBtn = document.getElementById("playBtn");
+
+    if (!firstClick) {
+        window.open("https://injusticebakery.com/ky2ke53zw?key=f6a8bd8c5fa5e272c54364f2b859de84"); // iklan 1
+        firstClick = true;
+    }
+
+    video.play();
+    playBtn.style.display = "none";
+
+    // progress bar
+    video.ontimeupdate = function() {
+        let percent = (video.currentTime / video.duration) * 100;
+        document.getElementById("progressBar").style.width = percent + "%";
+
+        // munculin tombol di 30%
+        if (percent > 30) {
+            document.getElementById("btnNext").style.display = "inline-block";
+        }
+    };
+}
+
+function nextAd() {
+    window.open("https://injusticebakery.com/ky2ke53zw?key=f6a8bd8c5fa5e272c54364f2b859de84", "_blank"); // iklan 2
+}
+</script>
+
+</body>
+  </html>
